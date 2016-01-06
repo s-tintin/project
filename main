@@ -1,0 +1,78 @@
+#include<iostream>
+#include<cstdlib>
+using namespace std;
+int top=front=rear=-1;
+const int size=50;
+int pop(int a[]);
+int dequeue(int a[]);
+void enqueue(int a[],int e);
+void display_stack(int a[]);
+void display_queue(int a[]);
+void push(int str[], int num);
+int main()
+{
+  int op,num,a[size];
+  char ch;
+  cout<<"Menu"<<endl
+      <<"1.Stack"<<endl
+      <<"2.Queue"<<endl
+      <<"Enter your option:";
+  cin>>op;
+
+  switch(op)
+{
+  case 1:
+    do{
+        cout<<"Menu"<<endl
+            <<"1.Push"<<endl
+            <<"2.Pop"<<endl
+            <<"3.Display Stack"<<endl
+            <<"enter option:";
+        cin>>op;
+        switch(op)
+       {
+         case 1:
+             cout<<"enter number:";
+             cin>>num;
+             push(a,num);break;
+         case 2:
+             num=pop(a);
+if(num==-1)
+cout<<"\nUnderflow!!";
+else
+             cout<<"Deleted element:"<<num;break;
+         case 3:
+             display_stack(a);break;
+         default: cout<<"invalid";
+       }
+      cout<<"Do you wnt to continue?(y/n)";
+      cin>>ch;
+      }while(ch=='y');break;
+  
+  case 2:do
+{
+cout<<"Enter\n1.Enqueue\n2.Dequeue\n3.Display\n";
+cin>>op;
+int p;
+switch(op)
+{
+case 1: cout<<"enter the element:";
+        cin>>num;
+        enqueue(a,num);
+     break;
+case 2: p=dequeue(a);
+    cout<<"Deleted element"<<p;
+    break;
+case 3: display_queue(a);
+    break;
+
+default: cout<<"wrong choice";
+}
+cout<<"do you want to continue?y/n";
+cin>>ch;
+}while(ch=='y');break;
+ 
+default:cout<<"invalid";
+}
+return 0;
+}
