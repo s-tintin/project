@@ -76,3 +76,16 @@ default:cout<<"invalid";
 }
 return 0;
 }
+void display_stack(int a[])
+{
+int i;
+for(i=top;i>=0;i--)
+cout<<a[i]<<" ";
+}
+void display_queue(int a[])
+{
+if(front==-1)
+cout<<"Empty queue!!";
+for(int i=front;i<=rear;i++)
+cout<<a[i]<<" ";
+}
