@@ -1,0 +1,15 @@
+void enqueue(int a[],int e)
+{
+if(rear==size-1)
+cout<<"Queue overflow!!!"<<endl;
+else if(rear==-1)
+{
+front=rear=0;
+a[rear]=e;
+}
+else
+{
+rear++;
+a[rear]=e;
+}
+}
