@@ -1,15 +1,15 @@
 int dequeue(int a[])
 {
-int ret;
+int val;
 if(front== -1)
 return -1;
 else
 {
-ret=a[front];
+val=a[front];
 if(front==rear)
 front=rear=-1;
 else
 front++;
 }
-return ret;
+return val;
 }
